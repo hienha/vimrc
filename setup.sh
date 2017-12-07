@@ -1,9 +1,18 @@
 #!/bin/bash
 
+
+# check directory
+[ -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
+
+# clone vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mv ~/.vimrc{,.origin}
+
+# back vimrc file
+mv ~/.vimrc ~/.vimrc.origin
 cp ./vimrc ~/.vim/vimrc
 ln ~/.vimrc ~/.vim/vimrc
+
+# install plugin
 vim +PluginInstall +qall
 
 echo "dont forget to install / update YoucompleteMe"
