@@ -21,8 +21,6 @@ set expandtab
 
 set relativenumber
 
-set background=dark
-colorscheme solarized
 
 " show location
 set cursorcolumn
@@ -55,9 +53,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
-
 Plugin 'jiangmiao/auto-pairs'
-
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 "NERDTree快捷键
