@@ -55,6 +55,10 @@ Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 Plugin 'jiangmiao/auto-pairs'
 
+" make session, just like bookmarks
+" nmap <F2> :mksession! ~/.vim/sessions/%.vim <CR>
+nmap <F2> :wa<Bar>exe "mksession! ~/.vim/sessions/" <CR>
+
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 "NERDTree快捷键
 nmap <F3> :NERDTreeTabsToggle <CR>

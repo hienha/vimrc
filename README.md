@@ -15,4 +15,7 @@ vimrc files, you can copy to ~/.vimrc and run `vim +PluginInstall +qall` to inst
     - <F8> format python code with autopep8, Only worked on console(Terminal|iTerm2)
     - Enable folding code with <space>, include class functoin if and so on statements.
 
+* 2017-12-08 12:13
+    - bind <F2> to save the current session. see more about `mksession`, `:help mksession`
+
 # refs: [https://github.com/j1z0/vim-config](https://github.com/j1z0/vim-config)
