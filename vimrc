@@ -55,6 +55,12 @@ Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 Plugin 'jiangmiao/auto-pairs'
 
+" supported markdown preview
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'isnowfy/python-vim-instant-markdown'
+
 " make session, just like bookmarks
 " nmap <F2> :mksession! ~/.vim/sessions/%.vim <CR>
 nmap <F2> :wa<Bar>exe "mksession! ~/.vim/sessions/" <CR>
@@ -217,5 +223,33 @@ endif
 
 call togglebg#map("<F9>")
 
+
+" auto add file header
+autocmd BufNewFile *.py 0r ~/.vim/vim_template/vim_header_for_python
+autocmd BufNewFile *.py ks|call FileName()|'s
+autocmd BufNewFile *.py ks|call CreatedTime()|'s
+
+autocmd BufNewFile *.sh 0r ~/.vim/vim_template/vim_header_for_sh
+autocmd BufNewFile *.sh ks|call FileName()|'s
+autocmd BufNewFile *.sh ks|call CreatedTime()|'s
+
+fun FileName()
+  if line("$") > 10
+    let l = 10
+  else
+    let l = line("$")
+  endif
+  exe "1," . l . "g/File Name:.*/s/File Name:.*/File Name: " .expand("%")
+endfun
+
+fun CreatedTime()
+  if line("$") > 10
+    let l = 10
+  else
+    let l = line("$")
+  endif
+  exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: " .strftime("%Y-%m-%d %T")
+endfun
+" end auto add file header
 
 " =============== custom end ==========================

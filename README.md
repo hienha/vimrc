@@ -18,4 +18,8 @@ vimrc files, you can copy to ~/.vimrc and run `vim +PluginInstall +qall` to inst
 * 2017-12-08 12:13
     - bind <F2> to save the current session. see more about `mksession`, `:help mksession`
 
+* 2017-12-14 11:25
+    - add .zshrc file for `on-my-zsh`
+    - add markown support for vim
+
 # refs: [https://github.com/j1z0/vim-config](https://github.com/j1z0/vim-config)
