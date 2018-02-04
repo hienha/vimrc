@@ -8,7 +8,7 @@
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # back vimrc file
-mv ~/.vimrc ~/.vimrc.origin
+[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.origin
 cp ./vimrc ~/.vim/vimrc
 ln ~/.vimrc ~/.vim/vimrc
 
