@@ -11,7 +11,7 @@ vundle_git_repo_dir="~/.vim/bundle/Vundle.vim"
 # back vimrc file
 [ -f ~/.vimrc ] && cp ~/.vimrc ~/.vimrc_$(date +%Y%m%d_%H%M%S)
 rm -f ~/.vimrc ~/.vim/vimrc
-cp vimrc ~/.vim/vimrc && ln -s ~/.vimrc/vimrc ~/.vimrc
+cp vimrc ~/.vim/vimrc && ln -s ~/.vim/vimrc ~/.vimrc
 
 # py head file check
 home="$(cd ~; pwd)"
@@ -20,7 +20,7 @@ par_dir=$(dirname ${header_temp})
 [ -d ${par_dir} ] || mkdir -p ${par_dir}
 
 python_temp_file="${par_dir}/vim_header_for_python"
-cat << EOF > %python_temp_file
+cat << EOF > $python_temp_file
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #########################################################################
@@ -50,5 +50,5 @@ EOF
 # install plugin
 vim +PluginInstall +qall
 
-echo "dont forget to install / update YoucompleteMe"
-echo "https://github.com/j1z0/dotfiles.git"
+echo "\n\n\033[32;1mdont forget to install / update YoucompleteMe\033[0m"
+echo "\033[32;1mhttps://github.com/j1z0/dotfiles.git\033[0m"
