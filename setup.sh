@@ -5,12 +5,13 @@
 [ -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
 
 # clone vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vundle_git_repo_dir="~/.vim/bundle/Vundle.vim"
+[ -d $vundle_git_repo_dir ] || git clone https://github.com/VundleVim/Vundle.vim.git $vundle_git_repo_dir
 
 # back vimrc file
-[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.origin
-cp ./vimrc ~/.vim/vimrc
-ln ~/.vimrc ~/.vim/vimrc
+[ -f ~/.vimrc ] && cp ~/.vimrc ~/.vimrc_$(date +%Y%m%d_%H%M%S)
+rm -f ~/.vimrc ~/.vim/vimrc
+cp vimrc ~/.vim/vimrc && ln -s ~/.vimrc/vimrc ~/.vimrc
 
 # py head file check
 home="$(cd ~; pwd)"
@@ -18,7 +19,7 @@ header_temp="${home}/.vim/vim_template/vim_header_for_python"
 par_dir=$(dirname ${header_temp})
 [ -d ${par_dir} ] || mkdir -p ${par_dir}
 
-python_temp_file=${par_dir}/vim_header_for_python
+python_temp_file="${par_dir}/vim_header_for_python"
 cat << EOF > %python_temp_file
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
@@ -40,6 +41,7 @@ cat << EOF > $sh_temp_file
 # Created Time:
 #########################################################################
 #!/bin/bash
+EOF
 
 
 # install third packages
