@@ -22,4 +22,7 @@ vimrc files, you can copy to ~/.vimrc and run `vim +PluginInstall +qall` to inst
     - add .zshrc file for `on-my-zsh`
     - add markown support for vim
 
+* 2018-02-25 15:02
+    - check py template file.
+
 # refs: [https://github.com/j1z0/vim-config](https://github.com/j1z0/vim-config)

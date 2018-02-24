@@ -12,8 +12,18 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./vimrc ~/.vim/vimrc
 ln ~/.vimrc ~/.vim/vimrc
 
-# install third packages
+# py head file check
+home="$(cd ~; pwd)"
+header_temp="${home}/.vim/vim_template/vim_header_for_python"
+par_dir=$(dirname ${header_temp})
+[ -d ${par_dir} ] || mkdir -p ${par_dir}
+temp_file=${par_dir}/vim_header_for_python
 
+cat << EOF > %temp_file
+
+EOF
+
+# install third packages
 [ -f ./requirements.txt ] && pip install -r ./requirements.txt
 
 # install plugin
