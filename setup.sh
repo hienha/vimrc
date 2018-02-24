@@ -1,11 +1,12 @@
 #!/bin/bash
 
+home="$(cd ~; pwd)"
 
 # check directory
-[ -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
+[ -d ${home}/.vim/bundle ] || mkdir -p ${home}/.vim/bundle
 
 # clone vundle
-vundle_git_repo_dir="~/.vim/bundle/Vundle.vim"
+vundle_git_repo_dir="${home}/.vim/bundle/Vundle.vim"
 [ -d $vundle_git_repo_dir ] || git clone https://github.com/VundleVim/Vundle.vim.git $vundle_git_repo_dir
 
 # back vimrc file
@@ -14,7 +15,6 @@ rm -f ~/.vimrc ~/.vim/vimrc
 cp vimrc ~/.vim/vimrc && ln -s ~/.vim/vimrc ~/.vimrc
 
 # py head file check
-home="$(cd ~; pwd)"
 header_temp="${home}/.vim/vim_template/vim_header_for_python"
 par_dir=$(dirname ${header_temp})
 [ -d ${par_dir} ] || mkdir -p ${par_dir}
