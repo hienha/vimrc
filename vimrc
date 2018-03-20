@@ -78,6 +78,12 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'isnowfy/python-vim-instant-markdown'
 
+
+" TabMan ------------------------------
+" mappings to toggle display, and to focus on it
+let g:tabman_toggle = 'tl'
+let g:tabman_focus  = 'tf'
+
 " make session, just like bookmarks
 " nmap <F2> :mksession! ~/.vim/sessions/%.vim <CR>
 nmap <F2> :wa<Bar>exe "mksession! ~/.vim/sessions/" <CR>
