@@ -12,8 +12,24 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 
+" search
+set hlsearch                    " highlight searches
+set incsearch                   " do incremental searching, search as you type
+set ignorecase                  " ignore case when searching
+set smartcase                   " no ignorecase if Uppercase char present
+
+" tab
+set expandtab                   " expand tabs to spaces
+set smarttab
+set shiftround
+
+" indent
+set autoindent smartindent shiftround
+set shiftwidth=4
 set tabstop=4
+set softtabstop=4                " insert mode tab and backspace use 4 spaces
 set autoindent
+
 set autochdir   " 自动切换目录到当前文件所在的目录
 syntax enable
 syntax on
@@ -218,7 +234,7 @@ if has('gui_running')
   set background=light
   colorscheme solarized
 else
-  colorscheme Zenburn
+  colorscheme zenburn
 endif
 
 call togglebg#map("<F9>")
