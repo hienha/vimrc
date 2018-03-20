@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias translate="trans --shell -b :zh"
+alias rm='rm -i'
 
 # iTerm references.
 export CLICOLOR=1
