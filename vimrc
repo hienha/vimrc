@@ -70,6 +70,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/tabman.vim'
 
 " supported markdown preview
 Plugin 'godlygeek/tabular'
