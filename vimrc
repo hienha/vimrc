@@ -63,6 +63,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+
+" 底部状态栏美化
+Plugin 'vim-airline'
+set laststatus=2  "永远显示状态栏
+set t_Co=256      "在windows中用xshell连接打开vim可以显示色彩
+
+" Terminal Vim with 256 colors colorscheme
+Plugin 'fisadev/fisa-vim-colorscheme'
+
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-powerline'
@@ -163,9 +172,9 @@ nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
 " Auto complete plugin
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Bundle 'Valloric/YouCompleteMe'
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " python with virtualenv support
 py << EOF
