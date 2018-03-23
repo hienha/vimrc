@@ -54,8 +54,10 @@ vim +PluginInstall +qall
 echo -e '\033[32;1mCloning repository to locale\033[0m'
 git clone git@github.com:hienha/YouCompleteMe ~/.vim/bundle/YouCompleteMe \
     && cd ~/.vim/bundle/YouCompleteMe \
-    && ./install.py --all
+    && git submodule update --init --recursive \
+    && ./install.py --clang-completer --gocode-completer
 echo -e '\033[32;1mInstall YouCompleteMe done.\033[0m'
+
 
 echo "\n\n\033[32;1mdont forget to install / update YoucompleteMe\033[0m"
 echo "\033[32;1mhttps://github.com/j1z0/dotfiles.git\033[0m"

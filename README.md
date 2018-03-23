@@ -26,6 +26,7 @@ vimrc files, you can copy to ~/.vimrc and run `vim +PluginInstall +qall` to inst
     - add python, sh template file.
 
 * 2018-03-23 16:29
+    - modified the `setup.sh` script.
     - how to correctly install Youcompleteme
     - See more, move step to directory "docs"
 
