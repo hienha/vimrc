@@ -25,4 +25,8 @@ vimrc files, you can copy to ~/.vimrc and run `vim +PluginInstall +qall` to inst
 * 2018-02-25 15:02
     - add python, sh template file.
 
+* 2018-03-23 16:29
+    - how to correctly install Youcompleteme
+    - See more, move step to directory "docs"
+
 # refs: [https://github.com/j1z0/vim-config](https://github.com/j1z0/vim-config)
