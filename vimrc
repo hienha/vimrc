@@ -39,8 +39,16 @@ set relativenumber
 
 
 " show location
-set cursorcolumn
+color desert
+
+highlight Keyword cterm=reverse,bold
+" 开启光亮光标行
 set cursorline
+hi CursorLine   cterm=NONE ctermbg=gray ctermfg=white guibg=darkred guifg=white
+
+"开启高亮光标列
+set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=gray ctermfg=white guibg=darkred guifg=white
 
 " =============== custom start ==========================
 filetype off                  " required
@@ -131,7 +139,7 @@ let g:SimpylFold_docstring_preview=1
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.go set tabstop=4
 
 "spaces for indents
 au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
@@ -157,7 +165,6 @@ set encoding=utf-8
 
 " For full syntax highlighting:
 let python_highlight_all=1
-syntax on
 
 " Keep indentation level from previous line:
 autocmd FileType python set autoindent
@@ -205,6 +212,8 @@ func! CompileRunGcc()
         :!time bash %
     elseif &filetype == 'python'
         exec "!clear; time python %"
+    elseif &filetype == 'go'
+        exec "!clear; time go run %"
     elseif &filetype == 'html'
         exec "!firefox % &<"
     elseif &filetype == 'go'
@@ -240,7 +249,6 @@ let g:SuperTabDefaultCompletionType="context"
 
 
 let python_highlight_all=1
-syntax on
 
 if has('gui_running')
   set guifont=Menlo\ Regular:h18
@@ -248,9 +256,11 @@ if has('gui_running')
   " 默认最大化窗口打开
   " autocmd GUIEnter * winpos 100 50
   set background=light
-  colorscheme solarized
+  " colorscheme solarized
 else
-  colorscheme zenburn
+  " colorscheme zenburn
+  " set background=dark
+  " colorscheme solarized
 endif
 
 call togglebg#map("<F9>")
